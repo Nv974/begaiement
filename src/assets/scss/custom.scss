@@ -52,6 +52,7 @@ main > .container {
 
 $custom-main: var(--bs-purple);
 $custom-secondary: var(--bs-orange);
+$custom-gray: #dcdfe4;
 
 .text-main {
     color: $custom-main;
@@ -59,6 +60,10 @@ $custom-secondary: var(--bs-orange);
 
 .text-second {
     color: $custom-secondary;
+}
+
+.border-second {
+    border-bottom: 3px $custom-secondary solid;
 }
 
 .btn-purple {
@@ -78,4 +83,17 @@ $custom-secondary: var(--bs-orange);
         border: 2px solid $custom-secondary;
         box-shadow: none;
     }
+}
+
+.video-ctn {
+    width: 192px;
+    height: 164px;
+    background: $custom-gray;
+    border-radius: 1rem;
+}
+
+.custom-card {
+    height: 266px;
+    width: 240px;
+    border-radius: 0.5rem;
 }
