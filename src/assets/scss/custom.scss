@@ -1,4 +1,10 @@
 // doc https://getbootstrap.com/docs/5.0/customize/
+@font-face {
+    font-family: 'SF Pro';
+    src: url('../fonts/SFPro/regular.otf'), url('../fonts/SFPro/bold.otf'),
+        url('../fonts/SFPro/medium.otf');
+}
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -21,9 +27,14 @@
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
-    --bs-font-sans-serif: "TTNormsPro-Medium", sans-serif;
-    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-font-sans-serif: 'TTNormsPro-Medium', sans-serif;
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+        'Liberation Mono', 'Courier New', monospace;
+    --bs-gradient: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0)
+    );
 }
 
 main > .container {
@@ -33,6 +44,38 @@ main > .container {
 .form-signin {
     width: 100%;
     max-width: 330px;
-    padding: 15px;
+    padding: 0;
     margin: auto;
+}
+
+// custom Nicolas Vitry
+
+$custom-main: var(--bs-purple);
+$custom-secondary: var(--bs-orange);
+
+.text-main {
+    color: $custom-main;
+}
+
+.text-second {
+    color: $custom-secondary;
+}
+
+.btn-purple {
+    background: $custom-main;
+    border-radius: 1rem;
+    height: 56px;
+    max-width: 328px;
+}
+
+.custom-input {
+    border-radius: 12px;
+    box-sizing: border-box;
+    max-width: 327px;
+    height: 56px;
+
+    &:focus {
+        border: 2px solid $custom-secondary;
+        box-shadow: none;
+    }
 }

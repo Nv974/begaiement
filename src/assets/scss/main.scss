@@ -1,3 +1,11 @@
-@import "~bootstrap/scss/bootstrap";
-@import "custom";
-@import "font";
+@import '~bootstrap/scss/bootstrap';
+@import 'custom';
+@import 'font';
+
+.navbar {
+    background: linear-gradient(90deg, $custom-main, $custom-secondary 150%);
+}
+
+#root {
+    font-family: 'SF Pro';
+}
