@@ -1,9 +1,18 @@
 import React, { lazy } from 'react';
+import { useRecoilValue } from 'recoil';
 import loginBg from '../assets/images/login.png';
+import { emailState, pwdState } from '../atoms/input';
+import Field from '../Components/Field';
 
 const Layout = lazy(() => import('../Components/Layout'));
 
 const Login = () => {
+    const emailValue = useRecoilValue(emailState);
+    const pwdValue = useRecoilValue(pwdState);
+
+    const formIsValid =
+        emailValue.length > 7 && pwdValue.length > 5 ? true : false;
+
     return (
         <Layout title='Connexion'>
             <div className='row vh-100 m-0'>
@@ -23,26 +32,22 @@ const Login = () => {
                             >
                                 Email
                             </label>
-                            <input
-                                type='email'
-                                id='inputEmail'
-                                className='form-control custom-input'
-                                placeholder='Email'
-                                required=''
-                                autoFocus=''
+                            <Field
+                                type={'email'}
+                                id={'inputEmail'}
+                                placeholder={'Email'}
                             />
+
                             <label
                                 htmlFor='inputPassword'
                                 className='visually-hidden'
                             >
                                 Mot de passe
                             </label>
-                            <input
-                                type='password'
-                                id='inputPassword'
-                                className='form-control custom-input mt-3'
-                                placeholder='Mot de passe'
-                                required=''
+                            <Field
+                                type={'password'}
+                                id={'inputPassword'}
+                                placeholder={'Mot de passe'}
                             />
 
                             <small
@@ -60,6 +65,7 @@ const Login = () => {
                             <button
                                 className='w-100 btn btn-purple text-white mt-3 p-2 '
                                 type='submit'
+                                disabled={!formIsValid}
                             >
                                 Accéder à mon espace
                             </button>
