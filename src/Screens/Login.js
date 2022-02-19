@@ -7,9 +7,12 @@ import Field from '../Components/Field';
 const Layout = lazy(() => import('../Components/Layout'));
 
 const Login = () => {
+    // réccupère la valeur des input dans le state => ./atoms
+    // valeur modifiée dans Field
     const emailValue = useRecoilValue(emailState);
     const pwdValue = useRecoilValue(pwdState);
 
+    // éventuellement rajouté un regex pour le mail
     const formIsValid =
         emailValue.length > 7 && pwdValue.length > 5 ? true : false;
 
@@ -32,6 +35,7 @@ const Login = () => {
                             >
                                 Email
                             </label>
+                            {/* Composant de champ input/text réutilisable */}
                             <Field
                                 type={'email'}
                                 id={'inputEmail'}
