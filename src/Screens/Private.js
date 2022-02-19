@@ -16,7 +16,9 @@ const Private = () => {
                     Consultez notre galerie de contenus média et suggérez-le à
                     vos patients
                 </div>
+                {/* Navigation */}
                 <Tabs />
+                {/* Mes favoris */}
                 <Favorites />
             </div>
         </Layout>
